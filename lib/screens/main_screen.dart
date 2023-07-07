@@ -51,30 +51,6 @@ class _MainScreenState extends State<MainScreen> {
           ),
         ],
       ),
-      floatingActionButton: Stack(
-        children: [
-          Container(
-            padding: const EdgeInsets.all(10),
-            width: 75,
-            height: 75,
-            decoration: BoxDecoration(
-              color: const Color(0xFF302C42),
-              borderRadius: BorderRadius.circular(50),
-            ),
-            child: FloatingActionButton(
-              onPressed: () {},
-              backgroundColor: Colors.purple[200],
-              child: Icon(
-                selectedIndex == 0
-                    ? Icons.search
-                    : Icons.supervised_user_circle,
-                color: const Color(0xFF211E2E),
-              ),
-            ),
-          ),
-        ],
-      ),
-      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
     );
   }
 }
