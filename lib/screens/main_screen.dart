@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:iiiteverything/screens/download_screen.dart';
 import 'package:iiiteverything/screens/upload_screen.dart';
 
 class MainScreen extends StatefulWidget {
@@ -22,39 +23,58 @@ class _MainScreenState extends State<MainScreen> {
       body: IndexedStack(
         index: selectedIndex,
         children: [
-          //TODO:- Make the donload screen
-          Center(child: Text("Download Screen")),
-
-          //TODO:- Make the upload screen
+          DownloadScreen(),
           comingSoon(),
         ],
       ),
-      bottomNavigationBar: Padding(
-        padding: const EdgeInsets.fromLTRB(0, 25, 0, 0),
-        child: BottomNavigationBar(
-          backgroundColor: Color(0xFF211E2E),
-          onTap: (index) {
-            onItemTapped(index);
-          },
-          selectedItemColor: Colors.green,
-          currentIndex: selectedIndex,
-          elevation: 3.0,
-          items: const <BottomNavigationBarItem>[
-            BottomNavigationBarItem(
-              icon: Icon(
-                Icons.download_rounded,
-              ),
-              label: "Browse",
+      bottomNavigationBar: BottomNavigationBar(
+        backgroundColor: const Color(0xFF211E2E),
+        onTap: (index) {
+          onItemTapped(index);
+        },
+        iconSize: 30,
+        selectedItemColor: Colors.purple[200],
+        currentIndex: selectedIndex,
+        elevation: 5.0,
+        items: const <BottomNavigationBarItem>[
+          BottomNavigationBarItem(
+            icon: Icon(
+              Icons.download_rounded,
             ),
-            BottomNavigationBarItem(
-              icon: Icon(
-                Icons.upload_file_rounded,
-              ),
-              label: "Upload",
+            label: "Browse",
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(
+              Icons.upload_file_rounded,
             ),
-          ],
-        ),
+            label: "Upload",
+          ),
+        ],
       ),
+      floatingActionButton: Stack(
+        children: [
+          Container(
+            padding: const EdgeInsets.all(10),
+            width: 75,
+            height: 75,
+            decoration: BoxDecoration(
+              color: const Color(0xFF302C42),
+              borderRadius: BorderRadius.circular(50),
+            ),
+            child: FloatingActionButton(
+              onPressed: () {},
+              backgroundColor: Colors.purple[200],
+              child: Icon(
+                selectedIndex == 0
+                    ? Icons.search
+                    : Icons.supervised_user_circle,
+                color: const Color(0xFF211E2E),
+              ),
+            ),
+          ),
+        ],
+      ),
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
     );
   }
 }

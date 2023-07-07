@@ -3,7 +3,7 @@ import 'package:lottie/lottie.dart';
 
 Widget comingSoon() {
   return Container(
-    color: Color(0xFF302C42),
+    color: const Color(0xFF302C42),
     child: Center(
       child: Column(
         mainAxisSize: MainAxisSize.min,
