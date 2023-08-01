@@ -8,11 +8,11 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    Future.delayed(Duration(seconds: 2), () {
+    Future.delayed(const Duration(seconds: 2), () {
       Navigator.of(context).pushReplacement(
         PageRouteBuilder(
           transitionDuration:
-              Duration(milliseconds: 700), // Adjust the duration as needed
+              const Duration(milliseconds: 700), // Adjust the duration as needed
           pageBuilder: (context, animation, secondaryAnimation) {
             return FadeTransition(
               opacity: Tween<double>(begin: 0, end: 1).animate(
@@ -21,7 +21,7 @@ class HomePage extends StatelessWidget {
                   curve: Curves.easeIn,
                 ),
               ),
-              child: MainScreen(),
+              child: const MainScreen(),
             );
           },
         ),
@@ -32,7 +32,7 @@ class HomePage extends StatelessWidget {
       body: LayoutBuilder(
         builder: (BuildContext context, BoxConstraints constraints) {
           return Container(
-            color: Color(0xFF302C42),
+            color: const Color(0xFF302C42),
             child: Center(
               child: SizedBox(
                 width: MediaQuery.of(context).size.width,
@@ -64,7 +64,7 @@ class HomePage extends StatelessWidget {
                       child: RichText(
                         textAlign: TextAlign.center,
                         text: TextSpan(
-                          style: TextStyle(
+                          style: const TextStyle(
                             fontSize: 15,
                             fontWeight: FontWeight.w500,
                           ),
@@ -75,7 +75,7 @@ class HomePage extends StatelessWidget {
                                 color: Colors.purple[200],
                               ),
                             ),
-                            TextSpan(
+                            const TextSpan(
                               text: "destination for your study needs at ",
                             ),
                             TextSpan(
